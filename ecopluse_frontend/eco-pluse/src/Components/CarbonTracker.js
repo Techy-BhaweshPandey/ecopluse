@@ -61,7 +61,7 @@ useEffect(()=>{
 
     // SAVE TO BACKEND
     try {
-      await fetch("http://localhost:5000/api/carbon/save", {
+      await fetch("https://ecopluse-je8y.onrender.com/api/carbon/save", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
