@@ -157,7 +157,7 @@ npm start
 
 ## 🔐 Environment Variables
 
-Create .env in server/
+Create .env in ecopluse_backend/
 
 MONGO_URI=your_mongodb_uri  
 OPENAI_API_KEY=your_api_key  
