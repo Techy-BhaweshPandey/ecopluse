@@ -2,12 +2,11 @@
 
 > A smart sustainability platform that helps users track, reduce, and gamify their carbon footprint using AI insights.
 
----
+
 
 ## 🚀 Live Demo
 - 🌐 Live App: [https://greenlytics.netlify.app/]  
 
----
 
 ## 📸 Screenshots
 
@@ -16,39 +15,35 @@
   <img src="https://github.com/user-attachments/assets/b7048ada-a3a2-4754-93d2-789defbf9654" width="600"/>
 </p>
 
----
 
 ### 📊 Dashboard
 <p align="center">
   <img src="https://github.com/user-attachments/assets/5fd8a70f-be2a-4583-9973-07fa15a1347e" width="600"/>
 </p>
 
----
 
 ### 🤖 AI Sustainability Coach
 <p align="center">
   <img src="https://github.com/user-attachments/assets/6a018aa3-e8be-4b43-9bdd-9baa5caf70e8" width="600"/>
 </p>
 
----
 
 ### 🧾 Waste Classification / AI Feature
 <p align="center">
   <img src="https://github.com/user-attachments/assets/bd468d96-cd69-4e91-b5ac-4f7a69fa1659" width="600"/>
 </p>
 
----
 
 ### 🏆 Gamification & Leaderboard
 <p align="center">
   <img src="https://github.com/user-attachments/assets/637d8b6d-c259-478d-95ab-5e9f85a6d1b7" width="600"/>
 </p>
----
+
 
 ## 💡 Problem Statement
 Climate change is accelerating, but individuals lack simple, engaging tools to understand and reduce their carbon footprint.
 
----
+
 
 ## 🎯 Solution
 CarbonWise provides:
