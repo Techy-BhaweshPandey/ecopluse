@@ -30,10 +30,10 @@ useEffect(()=>
     if(!email) navigate("/login");
 })
   const loadData = async () => {
-   // const res1 = await fetch("http://localhost:5000/api/carbon/user10");
+   // const res1 = await fetch("https://ecopluse-je8y.onrender.com/api/carbon/user10");
     // const g = await res1.json();
 
-    const res2 = await fetch("http://localhost:5000/api/carbon/user12");
+    const res2 = await fetch("https://ecopluse-je8y.onrender.com/api/carbon/user12");
     const u = await res2.json();
 
     const usersList = u.data || [];
