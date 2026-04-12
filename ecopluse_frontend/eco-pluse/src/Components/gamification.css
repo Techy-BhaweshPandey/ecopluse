@@ -1,0 +1,286 @@
+/* =========================
+   GLOBAL
+========================= */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #f4fbf4, #ffffff);
+  color: #1b1b1b;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* =========================
+   HEADER (GLASS STYLE)
+========================= */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+
+  padding: 18px;
+  border-radius: 18px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   START BUTTON (GLOW)
+========================= */
+.start-btn {
+  background: linear-gradient(135deg, #2e7d32, #4caf50);
+  color: white;
+  border: none;
+
+  padding: 10px 18px;
+  border-radius: 12px;
+
+  cursor: pointer;
+  font-weight: bold;
+
+  transition: 0.3s;
+  box-shadow: 0 8px 20px rgba(46,125,50,0.3);
+}
+
+.start-btn:hover {
+  transform: scale(1.06);
+  box-shadow: 0 10px 25px rgba(46,125,50,0.45);
+}
+
+/* =========================
+   GRID (CARDS)
+========================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* =========================
+   CARD (SAAS STYLE)
+========================= */
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+
+  padding: 18px;
+  border-radius: 18px;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+
+  text-align: center;
+
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+/* =========================
+   PROGRESS BAR (GLOW XP)
+========================= */
+.bar {
+  height: 10px;
+  background: #e0e0e0;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2e7d32, #66bb6a);
+  transition: width 0.5s ease;
+  box-shadow: 0 0 10px rgba(46,125,50,0.4);
+}
+
+/* =========================
+   MISSION CARD (HIGHLIGHT)
+========================= */
+.mission {
+  margin-top: 20px;
+
+  background: linear-gradient(135deg, #ffffff, #f6fff6);
+  padding: 18px;
+
+  border-radius: 18px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+
+  border-left: 5px solid #2e7d32;
+}
+
+/* =========================
+   BADGES SECTION
+========================= */
+.badge-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+/* =========================
+   REAL PREMIUM BADGE (MEDAL STYLE)
+========================= */
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 16px;
+  border-radius: 50px;
+
+  background: linear-gradient(135deg, #ffffff, #f1f8e9);
+  border: 1px solid #c8e6c9;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+
+  transition: 0.3s;
+  cursor: pointer;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* shiny animation */
+.badge::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.5),
+    transparent
+  );
+  transform: rotate(25deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) rotate(25deg); }
+  100% { transform: translateX(100%) rotate(25deg); }
+}
+
+.badge:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.badge-icon {
+  font-size: 20px;
+}
+
+.badge-text {
+  font-weight: 600;
+  color: #2e7d32;
+  z-index: 2;
+}
+
+/* =========================
+   LOADING
+========================= */
+.loading {
+  text-align: center;
+  padding: 60px;
+  color: #2e7d32;
+  font-size: 18px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
+/* SMOOTH XP ANIMATION */
+.animated-fill {
+  transition: width 1.2s ease-in-out;
+}
+
+/* LEVEL UP MODAL */
+.levelup-modal {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #2e7d32, #66bb6a);
+  color: white;
+  padding: 16px 25px;
+  border-radius: 12px;
+  font-weight: bold;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  animation: pop 0.4s ease;
+  z-index: 999;
+}
+
+@keyframes pop {
+  from { transform: translateX(-50%) scale(0.5); opacity: 0; }
+  to { transform: translateX(-50%) scale(1); opacity: 1; }
+}
+
+/* BADGE GLOW EFFECT */
+.glow {
+  box-shadow: 0 0 10px rgba(46,125,50,0.5);
+  animation: glowAnim 2s infinite;
+}
+
+@keyframes glowAnim {
+  0% { box-shadow: 0 0 5px #2e7d32; }
+  50% { box-shadow: 0 0 20px #66bb6a; }
+  100% { box-shadow: 0 0 5px #2e7d32; }
+}
+
+/* STREAK FIRE INTENSITY */
+.fire {
+  margin-left: 8px;
+  transition: 0.3s;
+}
+
+.fire-1 { opacity: 0.3; }
+.fire-2 { opacity: 0.5; }
+.fire-3 { opacity: 0.7; }
+.fire-4 { opacity: 0.9; }
+.fire-5 {
+  opacity: 1;
+  filter: drop-shadow(0 0 6px orange);
+  transform: scale(1.2);
+}
+
+/* DAILY BONUS BOX */
+.bonus-box {
+  border-left: 5px solid #ff9800;
+  background: #fff8e1;
+}
