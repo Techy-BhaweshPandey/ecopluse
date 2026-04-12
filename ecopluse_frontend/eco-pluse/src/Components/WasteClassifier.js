@@ -50,7 +50,7 @@ const WasteClassifier = () => {
     setLoading(true);
     try {
       const imageBase64 = await toBase64(image);
-      const res = await fetch("http://localhost:5000/api/ai/waste-classifier", {
+      const res = await fetch("https://ecopluse-je8y.onrender.com/api/ai/waste-classifier", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ imageBase64 }),
