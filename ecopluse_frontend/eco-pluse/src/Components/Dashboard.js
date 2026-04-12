@@ -55,7 +55,7 @@ const chartRef = useRef();
 
   const fetchHistory = useCallback(async () => {
     if (!email) return;
-    const res = await fetch(`http://localhost:5000/api/carbon/user8/${email}`);
+    const res = await fetch(`https://ecopluse-je8y.onrender.com/api/carbon/user8/${email}`);
     const data = await res.json();
     if (data.success) setHistory(data.data);
   }, [email]);
