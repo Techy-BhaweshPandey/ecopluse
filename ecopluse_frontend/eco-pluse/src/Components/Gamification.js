@@ -22,7 +22,7 @@ const Gamification = () => {
   useEffect(() => {
     if (!email) return;
 
-    fetch(`http://localhost:5000/api/carbon/user/${email}`)
+    fetch(`https://ecopluse-je8y.onrender.com/api/carbon/user/${email}`)
       .then((res) => res.json())
       .then((res) => setData(res));
   }, [email]);
