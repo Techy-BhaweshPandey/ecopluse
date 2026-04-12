@@ -5,17 +5,22 @@
 ---
 
 ## 🚀 Live Demo
-- 🌐 Live App: [ https://greenlytics.netlify.app/]  
+- 🌐 Live App: [https://greenlytics.netlify.app/]  
 
 ---
 
 ## 📸 Screenshots
 <!-- Add images after building -->
-![Dashboard](./screenshots/dashboard.png)
-![Analytics](./screenshots/analytics.png)
-![AI](./screenshots/ai.png)
-![Gamification](./screenshots/gamification.png)
-
+![Landing Page](<img width="1763" height="1697" alt="image" src="https://github.com/user-attachments/assets/b7048ada-a3a2-4754-93d2-789defbf9654" />
+)
+![Dashboard](<img width="1763" height="844" alt="image" src="https://github.com/user-attachments/assets/5fd8a70f-be2a-4583-9973-07fa15a1347e" />
+ )
+![AI](<img width="1763" height="964" alt="image" src="https://github.com/user-attachments/assets/6a018aa3-e8be-4b43-9bdd-9baa5caf70e8" />
+)
+![Gamification](<img width="1763" height="944" alt="image" src="https://github.com/user-attachments/assets/bd468d96-cd69-4e91-b5ac-4f7a69fa1659" />
+)
+![Gamification](<img width="1763" height="844" alt="image" src="https://github.com/user-attachments/assets/637d8b6d-c259-478d-95ab-5e9f85a6d1b7" />
+)
 ---
 
 ## 💡 Problem Statement
@@ -119,15 +124,15 @@ ecopluse/
 
 1. Clone repo
 git clone https://github.com/Techy-BhaweshPandey/ecopluse.git
-cd carbonwise
+cd eco-pluse
 
 2. Backend setup
-cd server
+cd ecopluse_backend
 npm install
 npm run dev
 
 3. Frontend setup
-cd client
+cd ecopluse_frontend
 npm install
 npm start
 
@@ -190,7 +195,7 @@ Phase 4:
 Frontend:  Netlify  
 Backend: Render   
 Database: MongoDB Atlas  
-
+AI: Use of Gemini for predicting waste classifier and generating carbon footprint
 Add links:
 - Frontend: [link]
 - Backend: [link]
