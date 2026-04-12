@@ -23,39 +23,64 @@ router.post("/coach", async (req, res) => {
       electricity,
       diet,
       result,
-      message,
+      question,
     } = req.body;
 
     let prompt = "";
 
-    // CASE 1: Carbon data
-    if (km || electricity || diet || result) {
+    const isGeneralQuestion =
+      !km && !electricity && !diet && !result;
+
+    // =========================
+    // 🧠 GENERAL QUESTION MODE
+    // =========================
+    if (isGeneralQuestion && question) {
+      prompt = `
+You are a clean, factual, eco-education assistant.
+
+STRICT RULES:
+- Answer ONLY what the user asks
+- Do NOT give tips unless asked
+- Do NOT assume user lifestyle
+- Keep answer simple and correct
+- Max 5 lines
+
+User Question:
+"${question}"
+
+Answer clearly:
+`;
+    }
+
+    // =========================
+    // 🌱 PERSONALIZED MODE
+    // =========================
+    else if (question) {
       prompt = `
 You are an eco sustainability coach.
 
-User data:
+User Data:
 - Transport: ${transport || "unknown"}, ${km || 0} km/week
 - Electricity: ${electricity || 0} units/month
 - Diet: ${diet || "unknown"}
 - Carbon footprint: ${result || "unknown"} kg CO2/week
 
-Give 2-3 short actionable tips to reduce carbon footprint.
-Keep it simple, motivational, and practical.
+User Question:
+"${question}"
+
+STRICT RULES:
+- Give only relevant personalized advice
+- No generic explanations unless asked
+- Max 4 bullet points
+- Actionable + practical
+
+Response:
 `;
     }
 
-    // CASE 2: Chat message
-    if (message) {
-      prompt = `
-You are an eco-friendly AI assistant.
-
-User question:
-${message}
-
-Reply in a helpful, short, and practical eco-friendly way.
-`;
-    }
-
+    // =========================
+    // ❌ NO INPUT
+    // =========================
     if (!prompt) {
       return res.json({
         success: false,
@@ -63,6 +88,9 @@ Reply in a helpful, short, and practical eco-friendly way.
       });
     }
 
+    // =========================
+    // 🔥 GEMINI CALL
+    // =========================
     const response = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
       {

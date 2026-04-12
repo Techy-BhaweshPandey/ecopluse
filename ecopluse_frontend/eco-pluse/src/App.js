@@ -6,6 +6,7 @@ import Register from "./Components/Register";
 import Login from "./Components/Login";
 import Dashboard from "./Components/Dashboard";
 import Gamification from "./Components/Gamification";
+import CommunityLeaderboard from "./Components/CommunityLeaderboard";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         < Route path="/Login" element={<Login/>}/>
          <Route path="/Dashboard" element={<Dashboard />} />
          <Route path="/Gamification" element={<Gamification/>}/>
+         <Route path="/CommunityLeaderboard" element={<CommunityLeaderboard/>}/>
       </Routes>
     </BrowserRouter>
   );

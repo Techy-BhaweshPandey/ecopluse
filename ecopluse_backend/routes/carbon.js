@@ -132,6 +132,7 @@ router.post("/save", async (req, res) => {
 
     if (!community) {
       community = await Community.create({
+        
         totalCO2Saved: 0,
         totalActions: 0,
         weekCO2Saved: 0,
@@ -224,6 +225,58 @@ router.get("/user/:email", async (req, res) => {
 
   } catch (err) {
     console.log(err);
+    res.status(500).json({
+      success: false,
+      error: err.message
+    });
+  }
+});
+
+router.get("/user10", async (req, res) => {
+  try {
+    const data = await Community.find({});
+
+    res.json({
+      success: true,
+      data
+    });
+
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      error: err.message
+    });
+  }
+});
+
+router.get("/user12", async (req, res) => {
+  try {
+    const data = await UserGame.find({});
+
+    res.json({
+      success: true,
+      data
+    });
+
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      error: err.message
+    });
+  }
+});
+
+router.get("/user14/:email", async (req, res) => {
+  try {
+     const { email } = req.params;
+    const data = await Community.find({ email });
+
+    res.json({
+      success: true,
+      data
+    });
+
+  } catch (err) {
     res.status(500).json({
       success: false,
       error: err.message

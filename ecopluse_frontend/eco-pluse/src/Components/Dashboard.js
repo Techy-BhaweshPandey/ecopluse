@@ -196,6 +196,7 @@ const chartRef = useRef();
       { n: "AI Insights", p: "/AI" },
       { n: "Classifier", p: "/WasteClassifier" },
       { n: "Gamification", p: "/gamification" },
+       { n: "Community Leaderboard", p: "/CommunityLeaderboard" },
     ].map((item) => (
       <Button
         key={item.n}
@@ -212,11 +213,14 @@ const chartRef = useRef();
 
   {/* LOGOUT (INSIDE MENU) */}
   <Button
-    className="logout"
-    onClick={() => navigate("/login")}
-  >
-    Logout
-  </Button>
+  className="logout"
+  onClick={() => {
+    localStorage.removeItem("user"); // or removeItem("email") if you stored separately
+    navigate("/login");
+  }}
+>
+  Logout
+</Button>
 </Box>
 
       {/* MAIN */}

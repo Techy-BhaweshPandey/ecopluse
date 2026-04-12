@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Container,
   Typography,
@@ -26,7 +26,9 @@ const CarbonTracker = () => {
   JSON.parse(localStorage.getItem("user"))?.email;
 //console.log("EMAIL RECEIVED:", location.state?.email);
   const navigate = useNavigate();
-
+useEffect(()=>{
+  if(!email) navigate("/login");
+})
   const calculateCarbon = async () => {
     const kmValue = Number(km) || 0;
     const electricityValue = Number(electricity) || 0;
