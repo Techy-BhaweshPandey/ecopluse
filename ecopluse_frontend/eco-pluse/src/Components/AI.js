@@ -60,7 +60,7 @@ const AI = () => {
     ]);
 
     try {
-      const res = await fetch("http://localhost:5000/api/ai/coach", {
+      const res = await fetch("https://ecopluse-je8y.onrender.com/api/ai/coach", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
