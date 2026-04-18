@@ -213,9 +213,7 @@ Frontend:  Netlify
 Backend: Render   
 Database: MongoDB Atlas  
 AI: Use of Gemini for predicting waste classifier and generating carbon footprint
-Add links:
-- Frontend: [link]
-- Backend: [link]
+
 
 ---
 
